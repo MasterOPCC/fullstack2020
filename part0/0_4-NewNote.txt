@@ -1,0 +1,26 @@
+title 0.4 New Note - Pedro Cortina
+
+
+note left of Browser: Form data is \n sent with POST request.
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note right of Server:
+Server processes New Note \nand add it to Notes Array.
+end note right of 
+
+Server->Browser: URL Redirect Status Code 302
+Browser->Server:HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server->Browser: HTML-code
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server->Browser: main.js
+
+note over Browser:
+Browser starts executing js-code
+to retrieve data.json from server.
+end note over 
+
+Browser->Server: HTTP GET xhttp.open("GET", "/data.json", true)
+Server->Browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}]

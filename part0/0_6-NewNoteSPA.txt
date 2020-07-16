@@ -1,0 +1,34 @@
+title 0.6 Single Page App New Note - Pedro Cortina
+
+note left of Browser: Form data is \n sent with POST request.
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+
+note right of Server:
+Server processes New Note \nand add it to Notes Array.
+end note right of 
+Server->Browser: URL Status 200
+Server->Browser: spa.html
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: Status 200 - main.css
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Server->Browser: Status 200 - spa.js
+
+Browser->Server: HTTP GET xhttp.open("GET", "/data.json", true)
+Server->Browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}]
+
+note right of Browser:
+Create a new note.
+spa.js add new note to list after submit button is clicked.
+Sends new note to server
+end note right of 
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+Server->Browser: Statis 201 - {"message":"note created"}
+
+note right of Server:
+New note is added to data.jason. 
+Next time is requested appears as last item.
+end note right of 

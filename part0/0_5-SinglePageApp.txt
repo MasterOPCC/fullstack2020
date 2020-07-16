@@ -1,0 +1,22 @@
+title 0.5 Single Page App - Pedro Cortina
+
+
+note left of Browser: Form data is \n sent with POST request.
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+
+note right of Server:
+Server processes New Note \nand add it to Notes Array.
+end note right of 
+
+Server->Browser: URL Status 200
+Server->Browser: spa.html
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: Status 200 - main.css
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Server->Browser: Status 200 - spa.js
+
+Browser->Server: HTTP GET xhttp.open("GET", "/data.json", true)
+Server->Browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}]
